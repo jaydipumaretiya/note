@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Note</string>
+
+    <string name="error_internet">Please check your internet connection.</string>
+    <string name="add_note">Add Note</string>
+
+    <!--    Login-->
+    <string name="message_login_success">Login Successfully.</string>
+    <string name="message_valid_email">Please enter valid email address</string>
+    <string name="message_valid_password">Please enter valid password</string>
+    <string name="message_valid_password_length">Please enter attlist 6 characters.</string>
+
+    <!--    Register-->
+    <string name="message_register_success">Register Successfully.</string>
+</resources>
