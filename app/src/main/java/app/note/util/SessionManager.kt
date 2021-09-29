@@ -13,6 +13,7 @@ class SessionManager(context: Context) {
 
     private val preferencesName = "note"
     private val login = "login"
+    private val uid = "uid"
     private val language = "language"
     private val user = "user"
 
@@ -38,6 +39,13 @@ class SessionManager(context: Context) {
         get() = sharedPreferences.getBoolean(login, false)
         set(isLogin) {
             editor.putBoolean(login, isLogin)
+            editor.commit()
+        }
+
+    var userUID: String?
+        get() = sharedPreferences.getString(uid, "")
+        set(userUID) {
+            editor.putString(uid, userUID)
             editor.commit()
         }
 

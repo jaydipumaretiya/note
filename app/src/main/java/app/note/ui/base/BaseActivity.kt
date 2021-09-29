@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.note.R
@@ -60,27 +59,6 @@ abstract class BaseActivity(layoutResId: Int) : AppCompatActivity(layoutResId) {
         recyclerView.setHasFixedSize(hasFixedSize)
         recyclerView.isNestedScrollingEnabled = nestedScrollingEnabled
         recyclerView.layoutManager = linearLayoutManager
-        return recyclerView
-    }
-
-    protected fun setGridRecyclerView(
-        recyclerView: RecyclerView,
-        orientation: Int,
-        reverseLayout: Boolean,
-        spanCount: Int,
-        hasFixedSize: Boolean,
-        nestedScrollingEnabled: Boolean
-    ): RecyclerView {
-        val gridLayoutManager =
-            GridLayoutManager(
-                this,
-                spanCount,
-                orientation,
-                reverseLayout
-            )
-        recyclerView.setHasFixedSize(hasFixedSize)
-        recyclerView.isNestedScrollingEnabled = nestedScrollingEnabled
-        recyclerView.layoutManager = gridLayoutManager
         return recyclerView
     }
 

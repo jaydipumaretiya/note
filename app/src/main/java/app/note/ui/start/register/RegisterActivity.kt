@@ -38,6 +38,8 @@ class RegisterActivity : BaseActivity(R.layout.activity_register) {
 
         authViewModel.getUserLiveData()!!.observe(this, {
             if (it != null) {
+                sessionManager!!.userUID = it.uid
+                sessionManager!!.isLogin = true
                 showToast(getString(R.string.message_register_success))
                 startActivity(Intent(this@RegisterActivity, NoteActivity::class.java))
                 finishAffinity()

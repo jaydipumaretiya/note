@@ -11,6 +11,7 @@ import app.note.ui.start.AuthViewModelFactory
 import app.note.ui.start.viewmodel.AuthViewModel
 import app.note.ui.start.register.RegisterActivity
 import app.note.util.AppUtils.isValidEmail
+import app.note.util.Constants
 
 class LoginActivity : BaseActivity(R.layout.activity_login) {
 
@@ -38,6 +39,8 @@ class LoginActivity : BaseActivity(R.layout.activity_login) {
 
         authViewModel.getUserLiveData()!!.observe(this, {
             if (it != null) {
+                sessionManager!!.userUID = it.uid
+                sessionManager!!.isLogin = true
                 showToast(getString(R.string.message_login_success))
                 startActivity(Intent(this@LoginActivity, NoteActivity::class.java))
                 finishAffinity()
